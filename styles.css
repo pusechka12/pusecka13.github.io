@@ -1,0 +1,186 @@
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --header-bg-color: #6a0dad;
+    --button-bg-color: #fff;
+    --button-border-color: #6a0dad;
+    --button-text-color: #6a0dad;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    text-align: center;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.header {
+    background-color: var(--header-bg-color);
+    padding: 40px;
+    color: white;
+    position: relative;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 50px;
+    margin: 0;
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.telegram-link {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.telegram-link:hover {
+    text-decoration: underline;
+}
+
+.container {
+    margin-top: 50px; /* Опускаем блок с гаммами ниже */
+}
+
+.controls {
+    display: flex;
+    justify-content: center; /* Центрируем блок с элементами управления */
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.controls .theme-toggle {
+    position: absolute;
+    left: 20px; /* Сдвигаем кнопку смены темы влево с небольшим отступом */
+}
+
+.controls > *:not(.theme-toggle) {
+    margin: 0 10px; /* Для остальных элементов делаем отступы */
+}
+
+.theme-toggle {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: 2px solid var(--button-border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px var(--box-shadow-color);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: var(--button-border-color);
+    color: white;
+}
+
+button, select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid var(--button-border-color);
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    cursor: pointer;
+    box-shadow: 0 2px 5px var(--box-shadow-color);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover, select:hover {
+    background-color: var(--button-border-color);
+    color: white;
+}
+
+.palette {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.color-box {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 5px var(--box-shadow-color);
+}
+
+.color-box p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.snowflake {
+    position: fixed;
+    top: -10px;
+    z-index: 9999;
+    pointer-events: none;
+    color: white;
+    font-size: 1em;
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(100vh); }
+}
+
+/* Дождь */
+.raindrop {
+    position: fixed;
+    background: rgba(0, 0, 255, 0.5);
+    border-radius: 2px;
+    pointer-events: none;
+    animation: fall linear infinite;
+    top: -20px; /* Позиция дождя выше */
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(100vh); }
+}
+
+/* Темная тема */
+body.dark-theme {
+    --bg-color: #1c1c1c;
+    --text-color: #f0f0f0;
+    --header-bg-color: #3b3b3b;
+    --box-shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .snowflake {
+    color: #fff;
+}
+
+/* Светлая тема */
+body:not(.dark-theme) .raindrop {
+    background: rgba(0, 0, 255, 0.5);
+}

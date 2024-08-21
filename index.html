@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Matttyeeeex Color Palettes</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<header class="header">
+		<div class="header-content">
+			<h1>Matttyeeeex</h1>
+			<a href="https://t.me/matyeex" class="telegram-link" target="_blank">Telegram</a>
+		</div>
+	</header>
+	<div class="container">
+		<div class="controls">
+			<button id="themeToggle" class="theme-toggle">Тема: Светлая</button>
+			<select id="paletteType">
+                <option value="chromatic">Хроматическая</option>
+                <option value="analogous">Аналоговая</option>
+                <option value="complementary">Дополнительные цвета</option>
+                <option value="contrast">Контрастная</option>
+                <option value="classic">Классическая</option>
+                <option value="square">Квадратная</option>
+                <option value="rectangular">Прямоугольная</option>
+                <option value="tetra">Тетрадная</option>
+            </select>
+			<select id="temperature">
+                <option value="warm">Теплая</option>
+                <option value="cool">Холодная</option>
+            </select>
+			<button id="generatePalette">Генерировать палитру</button>
+		</div>
+		<div id="palette" class="palette"></div>
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>
